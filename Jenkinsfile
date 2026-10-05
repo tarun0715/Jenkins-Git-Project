@@ -10,15 +10,6 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                echo 'Running build...'
-                sh './shell.sh'
-            }
-        }
-
-        stage('System Health Check') {
-           
         stage('Test') {
             steps {
                 echo 'Running tests...'
