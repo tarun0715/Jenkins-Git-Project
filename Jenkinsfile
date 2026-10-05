@@ -10,12 +10,30 @@ pipeline {
             }
         }
 
+	stage('Build') {
+            steps {
+                echo '=== BUILD ==='
+                echo 'Building application...'
+                sh 'chmod +x app.sh build.sh system_check.sh'
+                sh './build.sh'
+            }
+        }
+
         stage('Test') {
             steps {
                 echo 'Running tests...'
                 sh 'echo "Tests completed successfully"'
+		sh './app.sh'
             }
         }
+
+        stage('System Health Check') {
+            steps {
+                echo '=== HEALTH CHECK ==='
+                sh './system_check.sh'
+            }
+        }
+
     }
 
     post {
