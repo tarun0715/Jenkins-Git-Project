@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo '=== BUILD ==='
                 echo 'Building application...'
-                sh 'chmod +x app.sh build.sh system_check.sh'
+                sh 'chmod +x app.sh build.sh check.sh'
                 sh './build.sh'
             }
         }
