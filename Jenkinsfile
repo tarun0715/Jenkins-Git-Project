@@ -30,7 +30,7 @@ pipeline {
         stage('System Health Check') {
             steps {
                 echo '=== HEALTH CHECK ==='
-                sh './system_check.sh'
+                sh './check.sh'
             }
         }
 
